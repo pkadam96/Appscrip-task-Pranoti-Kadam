@@ -1,0 +1,121 @@
+footer{
+    background-color: black;
+    color: white;
+    padding: 4% 10% 1% 10%;
+}
+
+footer h2{
+    font-size: 20px;
+}
+
+.footer-top{
+    display: flex;
+    justify-content: space-between;    
+    border-bottom: 1px solid white;
+    padding-bottom: 30px;
+}
+
+.footer-top div:nth-child(1){
+    width: 60%;
+}
+
+.footer-top div:nth-child(2) {
+    width: 40%;
+}
+
+footer p{
+    font-size: 16px;
+}
+
+input{
+    width: 300px;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 30px;
+    outline: none;
+}
+
+button{
+    padding: 11px 40px;
+    background-color: black;
+    border: 2px solid #4c4c4c;
+    border-radius: 5px;
+    color: #4c4c4c;
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.us-currency{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.currency-desc{
+    font-size: 12px;
+}
+
+.footer-bottom {
+    display: flex;
+    margin-top: 50px;
+}
+
+.footer-bottom>div:nth-child(1){
+    display: flex;
+    align-items: flex-start;
+    gap: 200px;
+    width: 60%;
+}
+
+.footer-bottom>div:nth-child(2) {
+    width: 40%;
+}
+
+.footer-bottom li{
+    list-style: none;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.footer-bottom ul{
+    padding-inline-start: 0;
+}
+
+.footer-bottom i{
+    margin: 20px 30px 20px 0;
+}
+
+.payment-cards{
+    display: flex;
+    gap: 10px;
+}
+
+.payment-cards div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+}
+
+.payment-cards div:nth-child(4) {
+    background-color: #016fd0;
+}
+
+.footer-bottom span img {
+    margin-top: 3px;
+}
+
+.payment{
+    margin-top: 60px;
+}
+
+footer>p{
+    text-align: center;
+    font-size: 14px;
+}

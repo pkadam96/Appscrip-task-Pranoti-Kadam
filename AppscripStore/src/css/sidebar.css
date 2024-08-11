@@ -1,0 +1,39 @@
+.sidebarr {
+    padding: 15px 0;
+}
+
+.custom{
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.custom input[type="checkbox"] {
+    margin-top: 0;
+    width: 30px;
+}
+
+.checkbox {
+    display: flex;
+}
+
+.accordion-header {
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.accordion-content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+input[type="checkbox"]{
+    margin-top: 0;
+    width: 30px;
+}

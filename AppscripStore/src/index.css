@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'simplon-norm';
+}
+
+@font-face {
+    font-family: 'simplon-norm';
+    src: url('./fonts/SimplonNorm-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

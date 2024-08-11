@@ -1,0 +1,41 @@
+nav{
+    padding: 0 5%;
+    border-bottom: 1px solid rgb(212, 211, 211);}
+
+nav>div{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+nav h1{
+    margin-left: 200px;
+    font-size: 36px;
+    font-family: "Inter", sans-serif;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+select{
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 5%;
+}
+
+nav li{
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
