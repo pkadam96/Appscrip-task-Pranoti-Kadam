@@ -25,7 +25,7 @@ const Sidebar = () => {
                 <input type="checkbox" id="custom" name="custom" />
                 <label htmlFor="custom">CUSTOMIZABLE</label>
             </div>
-
+             <hr className="custom-hr" />
             <Accordion
                 title="IDEAL FOR"
                 isOpen={openAccordions.idealFor}
@@ -76,7 +76,11 @@ const Accordion = ({ title, isOpen, toggle, items }) => {
     return (
         <div className='accordion'>
             <div className='accordion-header' onClick={toggle}>
-                <span>{title}</span>
+                <div>
+                    <div>{title}</div>
+                    <div>All</div>
+                </div>
+                <i className={`fa-solid fa-chevron-${isOpen ? 'up' : 'down'}`}></i>
             </div>
             {isOpen && (
                 <div className='accordion-content'>
@@ -88,8 +92,9 @@ const Accordion = ({ title, isOpen, toggle, items }) => {
                     ))}
                 </div>
             )}
+             <hr className="custom-hr" />
         </div>
     );
 };
 
-export {Sidebar};
+export { Sidebar };

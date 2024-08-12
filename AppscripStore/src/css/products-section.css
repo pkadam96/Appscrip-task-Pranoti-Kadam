@@ -13,10 +13,18 @@
     font-size: 18px;
     font-weight: bold;
 }
+.filter div span{
+    margin-right: 50px;
+}
+.toggle-filter{
+    color: #898792;
+    cursor: pointer;
+    font-family: 'adobe-caslon';
+    font-weight: 100;
+}
 
 .container span{
     display: inline-block;
-    margin-right:100px;
     padding: 30px 0;
 }
 
@@ -30,11 +38,17 @@
 
 .products-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 20px;
     width: 80%;
     margin-left: 40px;
-    gap: 10px;
+}
+
+.products-container.with-sidebar {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.products-container.without-sidebar {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5%;
 }
 
 .image{

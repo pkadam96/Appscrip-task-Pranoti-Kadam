@@ -2,8 +2,7 @@
     padding: 15px 0;
 }
 
-.custom{
-    border-bottom: 1px solid #ddd;
+.custom {
     padding: 20px 0;
     font-size: 18px;
     font-weight: bold;
@@ -20,20 +19,33 @@
 
 .accordion-header {
     cursor: pointer;
-    border-bottom: 1px solid #ddd;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 18px;
     font-weight: bold;
+    padding: 10px 0;
 }
 
-.accordion-content{
+.accordion-header div div:nth-child(2){
+    font-weight: 100;
+    margin-top: 15px;
+}
+
+.accordion-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 20px 0;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     margin-top: 0;
     width: 30px;
 }
+ .custom-hr {
+     border: 0;
+     height: 1px;
+     background-color: #ddd;
+     margin: 20px 0;
+ }
