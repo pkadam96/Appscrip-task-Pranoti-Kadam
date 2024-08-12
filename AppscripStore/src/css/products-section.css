@@ -4,7 +4,7 @@
     border-bottom: 1px solid rgb(212, 211, 211);
 }
 
-.filter{
+.filter {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,33 +13,36 @@
     font-size: 18px;
     font-weight: bold;
 }
-.filter div span{
+
+.filter div span {
     margin-right: 50px;
 }
-.toggle-filter{
+
+.toggle-filter {
     color: #898792;
     cursor: pointer;
     font-family: 'adobe-caslon';
     font-weight: 100;
 }
 
-.container span{
+.container span {
     display: inline-block;
     padding: 30px 0;
 }
 
-.main{
+.main {
     display: flex;
 }
 
-.sidebar{
+.sidebar {
     width: 20%;
 }
 
-.products-container{
+.products-container {
     display: grid;
     width: 80%;
     margin-left: 40px;
+    margin-bottom: 50px;
 }
 
 .products-container.with-sidebar {
@@ -51,28 +54,97 @@
     column-gap: 5%;
 }
 
-.image{
+.image {
     width: 250px;
     height: 300px;
-    border: 1px solid rgb(207, 207, 207);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.image>img{
+.image>img {
     width: 70%;
 }
 
-.product-card h1{
+.product-card h1 {
     white-space: nowrap;
     width: 250px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
+.product-card .product-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+}
+
 .product-card p {
     color: gray;
     font-size: 20px;
     margin-top: -10px;
+}
+
+.heart-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-top: -30px;
+}
+
+.recommended-section {
+    position: relative;
+}
+
+.recommended {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.recommended i {
+    margin-left: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown-item p {
+    margin: 0;
+    font-weight: 100;
+    margin: 10px 0 ;
+}
+
+.dropdown-item.selected {
+    font-weight: bold;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
 }

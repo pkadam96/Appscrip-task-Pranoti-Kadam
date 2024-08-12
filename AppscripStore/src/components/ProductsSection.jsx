@@ -1,23 +1,42 @@
 import { useEffect, useState } from 'react';
 import '../css/products-section.css';
 import { Sidebar } from './Sidebar';
+import heartIcon from '../images/heart.png'; // Path to the heart image
+import pinkHeartIcon from '../images/redheart.png'; // Path to the pink heart image
 
 const ProductsSection = () => {
     const [products, setProducts] = useState([]);
-    const [sidebarVisible, setSidebarVisible] = useState(true); 
+    const [sidebarVisible, setSidebarVisible] = useState(true);
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const [selectedOption, setSelectedOption] = useState('RECOMMENDED');
 
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch('https://fakestoreapi.com/products');
             const data = await res.json();
-            setProducts(data);
+            setProducts(data.map(product => ({ ...product, isLiked: false }))); // Initialize isLiked state
         }
         fetchData();
-    }, [])
+    }, []);
 
     const toggleSidebar = () => {
         setSidebarVisible(prevState => !prevState);
-    }
+    };
+
+    const toggleLike = (id) => {
+        setProducts(products.map(product =>
+            product.id === id ? { ...product, isLiked: !product.isLiked } : product
+        ));
+    };
+
+    const toggleDropdown = () => {
+        setDropdownVisible(prevState => !prevState);
+    };
+
+    const handleOptionSelect = (option) => {
+        setSelectedOption(option);
+        setDropdownVisible(false);
+    };
 
     return (
         <section className='container'>
@@ -27,16 +46,35 @@ const ProductsSection = () => {
                     <span onClick={toggleSidebar} className='toggle-filter'>
                         {sidebarVisible ? (
                             <>
-                                <i className="fa-solid fa-chevron-left   "></i> <u>HIDE FILTER</u>
+                                <i className="fa-solid fa-chevron-left"></i> <u>HIDE FILTER</u>
                             </>
                         ) : (
                             <>
-                                <i className="fa-solid fa-chevron-right  "></i><u> SHOW FILTER</u>
+                                <i className="fa-solid fa-chevron-right"></i><u> SHOW FILTER</u>
                             </>
                         )}
                     </span>
                 </div>
-                <p>RECOMMENDED</p>
+                <div className='recommended-section'>
+                    <p onClick={toggleDropdown} className='recommended'>
+                        {selectedOption}
+                        <i className={`fa-solid fa-chevron-${dropdownVisible ? 'up' : 'down'}`}></i>
+                    </p>
+                    {dropdownVisible && (
+                        <div className='dropdown-menu'>
+                            {['RECOMMENDED', 'NEWEST FIRST', 'POPULAR', 'PRICE: HIGH TO LOW', 'PRICE: LOW TO HIGH'].map(option => (
+                                <div
+                                    key={option}
+                                    className={`dropdown-item ${selectedOption === option ? 'selected' : ''}`}
+                                    onClick={() => handleOptionSelect(option)}
+                                >
+                                    <p>{option}</p>
+                                    {selectedOption === option && <i className="fa-solid fa-check check-icon"></i>}
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
             <div className='main'>
                 {sidebarVisible && (
@@ -51,7 +89,15 @@ const ProductsSection = () => {
                                 <img src={product.image} alt={product.title} />
                             </div>
                             <h1>{product.title}</h1>
-                            <p>Rs {product.price}</p>
+                            <div className='product-details'>
+                                <p>$ {product.price}</p>
+                                <img
+                                    src={product.isLiked ? pinkHeartIcon : heartIcon}
+                                    alt="heart"
+                                    className='heart-icon'
+                                    onClick={() => toggleLike(product.id)}
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -61,3 +107,6 @@ const ProductsSection = () => {
 }
 
 export { ProductsSection };
+
+
+
