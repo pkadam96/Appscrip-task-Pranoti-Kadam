@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import logo from '../images/logo.png';
 import searchIcon from '../images/search-normal.png';
 import heartIcon from '../images/heart.png';
@@ -5,11 +6,20 @@ import shoppingBagIcon from '../images/shopping-bag.png';
 import profileIcon from '../images/profile.png';
 import '../css/navbar.css';
 
-const Navbar=()=>{
-    return(
+const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    return (
         <nav>
-            <div>
-                <img src={logo} alt="logo" />
+            <div className="nav-content">
+                <div>
+                    <button className="hamburger" onClick={toggleMenu}>☰</button>
+                    <img src={logo} alt="logo" />
+                </div>
                 <h1>LOGO</h1>
                 <div className='icons'>
                     <img src={searchIcon} alt="search-icon" />
@@ -21,7 +31,7 @@ const Navbar=()=>{
                     </select>
                 </div>
             </div>
-            <ul>
+            <ul className={menuOpen ? "menu-items" : ""}>
                 <li>SHOP</li>
                 <li>SKILLS</li>
                 <li>STORIES</li>
@@ -29,6 +39,7 @@ const Navbar=()=>{
                 <li>CONTACT US</li>
             </ul>
         </nav>
-    )
-}
-export {Navbar};
+    );
+};
+
+export { Navbar };

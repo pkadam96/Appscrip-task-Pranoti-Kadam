@@ -1,23 +1,32 @@
 import { useEffect, useState } from 'react';
 import '../css/products-section.css';
 import { Sidebar } from './Sidebar';
-import heartIcon from '../images/heart.png'; // Path to the heart image
-import pinkHeartIcon from '../images/redheart.png'; // Path to the pink heart image
+import heartIcon from '../images/heart.png'; 
+import pinkHeartIcon from '../images/redheart.png';
 
 const ProductsSection = () => {
     const [products, setProducts] = useState([]);
     const [sidebarVisible, setSidebarVisible] = useState(true);
     const [dropdownVisible, setDropdownVisible] = useState(false);
     const [selectedOption, setSelectedOption] = useState('RECOMMENDED');
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetch('https://fakestoreapi.com/products');
+useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const res = await fetch('https://dummyjson.com/products');
             const data = await res.json();
-            setProducts(data.map(product => ({ ...product, isLiked: false }))); // Initialize isLiked state
+            const productsWithLikes = data.products.map(product => ({
+                ...product,
+                isLiked: false
+            })); 
+            setProducts(productsWithLikes); 
+            console.log(productsWithLikes);
+        } catch (error) {
+            console.error('Error fetching products:', error);
         }
-        fetchData();
-    }, []);
+    };
+    fetchData();
+}, []);
+
 
     const toggleSidebar = () => {
         setSidebarVisible(prevState => !prevState);
@@ -86,7 +95,7 @@ const ProductsSection = () => {
                     {products.map(product => (
                         <div key={product.id} className='product-card'>
                             <div className='image'>
-                                <img src={product.image} alt={product.title} />
+                                <img src={product.images[0]} alt={product.title} />
                             </div>
                             <h1>{product.title}</h1>
                             <div className='product-details'>

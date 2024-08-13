@@ -57,7 +57,7 @@
 .image {
     width: 250px;
     height: 300px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border: 1px solid #ddd;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,13 +105,11 @@
 }
 
 .recommended i {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
     background-color: white;
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -120,6 +118,7 @@
     width: 200px;
     display: flex;
     flex-direction: column;
+    margin-left: -70px;
 }
 
 .dropdown-item {
@@ -137,7 +136,7 @@
 }
 
 .dropdown-item.selected {
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .dropdown-item:hover {
@@ -147,4 +146,14 @@
 .check-icon {
     width: 16px;
     height: 16px;
+}
+
+@media all and (min-width: 882px) and (max-width: 1024px) {}
+
+@media all and (min-width: 481px) and (max-width: 881px) {
+    
+}
+
+@media all and (max-width: 480px) {
+   
 }

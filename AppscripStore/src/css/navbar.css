@@ -1,50 +1,142 @@
-nav{
+nav {
     padding: 0 5%;
     border-bottom: 1px solid rgb(212, 211, 211);
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 100;
 }
 
-nav>div{
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav h1{
+.nav-content>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav h1 {
     margin-left: 200px;
-    font-size: 36px;
+    font-size: 3vw;
     font-family: "Inter", sans-serif;
 }
 
-.icons{
+.icons {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-select{
+.icons img {
+    cursor: pointer;
+}
+
+select {
     border: none;
     font-size: 16px;
     font-weight: bold;
 }
 
-nav ul{
+nav ul {
     display: flex;
     text-align: center;
     justify-content: center;
     gap: 5%;
+    padding-inline-start: 0;
+    margin-top: 0;
 }
 
-nav li{
+nav li {
     list-style: none;
-    font-size: 20px;
+    font-size: 1.5vw;
     font-weight: bolder;
     cursor: pointer;
 }
 
-nav li:hover{
+nav li:hover {
     font-weight: 100;
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+    font-size: 35px;
+}
+
+.menu-items {
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.menu-items li {
+    padding: 10px 0;
+}
+
+@media all and (min-width: 481px) and (max-width: 767px) {
+
+    .icons select,
+    .icons img:nth-child(4) {
+        display: none;
+    }
+
+    nav h1 {
+        margin-left: 80px;
+        font-size: 5vw;
+        margin-bottom: 0px;
+    }
+
+    nav li{
+        font-size: 3vw;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .icons select,
+        .icons img:nth-child(4) {
+            display: none;
+        }
+    
+        nav h1 {
+            margin-left: 30px;
+            font-size: 6vw;
+        }
+        .hamburger {
+            display: block;
+        }
+
+        .nav-content img {
+            margin-left: 10px;
+        }
+
+        nav ul {
+            display: none;
+        }
+        nav li{
+            font-size: 3vw;
+        }
+        .menu-items {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            background-color: white;
+        }
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 0px;
+        }
+}

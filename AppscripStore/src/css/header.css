@@ -4,21 +4,42 @@ section{
     border-bottom: 1px solid rgb(212, 211, 211);
 }
 
-.header-section{
-    width: 75%;
-    margin: auto;
-}
-
 .heading{
-    font-size: 60px;
+    font-size: 4vw;
     text-align: center;
 }
 
 .sub-heading{
-    font-size: 22px;
+    font-size: 1.5vw;
     text-align: center;
-    padding: 0 10%;
+    padding: 0 17%;
     margin-top: -50px;
-    line-height: 40px;
+    line-height: 3vw;
     margin-bottom: 50px;
 }
+
+@media all and (min-width: 481px) and (max-width: 881px) {
+    .sub-heading { 
+        font-size: 2vw;
+        margin-top: -10px;
+        line-height: 2vw;
+        margin-bottom: 5vw;
+        padding: 0 10%;
+    }
+}
+
+@media all and (max-width: 480px) {
+    section{
+        width: 100%;
+    }
+    .heading {
+        font-size: 7vw;
+    }
+    .sub-heading {
+        font-size: 3.5vw;
+        margin-top: -10px;
+        line-height: 3.5vw;
+        margin-bottom: 5vw;
+        padding: 0 0;
+    }
+} 
